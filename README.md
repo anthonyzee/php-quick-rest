@@ -158,6 +158,52 @@ Ensure Apache is configured with `mod_rewrite` and your virtual host points to t
 
 ---
 
+## 💡 Tips and Suggestions
+
+- Use `default.php` to handle generic or fallback logic in a module. For example, in the `/product` folder, you can use `default.php` to return a singleton product query by inspecting `$_GET` or `$_REQUEST`.
+
+- Add `require_once __DIR__ . '/../vendor/autoload.php';` at the top of your scripts to load Composer dependencies (e.g., JWT classes) when using Composer.
+
+- Make sure your `.htaccess` is present in every REST module folder to ensure Apache correctly routes to `index.php`.
+
+- For new users, create hashed passwords using: https://tinyfilemanager.github.io/docs/pwd.html and store them in `$auth_users`.
+
+- Secure your folders and APIs in production by disabling directory listing and avoiding exposing sensitive files (e.g., `.env`, `*.log`).
+
+## 📦 Installing via Composer (from GitHub)
+
+To install this project directly from GitHub using Composer:
+
+1. Create a `composer.json` file in the root folder of your project and add the following content:
+
+```json
+{
+  "require": {
+    "anthonyzee/php-quick-rest": "dev-main"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/anthonyzee/php-quick-rest"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
+```
+
+2. Run the following command to fetch the project and its dependencies:
+
+```bash
+composer update
+```
+
+3. After installation, make sure to include the autoloader in your PHP scripts:
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+```
+
 ## 📄 License
 
 MIT License – use and modify freely.
