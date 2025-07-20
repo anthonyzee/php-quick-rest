@@ -1,1 +1,29 @@
-{ "require": { "firebase/php-jwt": "^6.0" } }
+{
+  "name": "anthonyzee/php-quick-rest",
+  "description": "Lightweight modular PHP REST API with JWT and fallback routing.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anthony Zee",
+      "email": "your@email.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "firebase/php-jwt": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpQuickRest\\": "utils/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/anthonyzee/php-quick-rest"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
