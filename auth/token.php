@@ -5,6 +5,9 @@
 require_once __DIR__ . '/../utils/cors.php';
 require_once __DIR__ . '/../utils/jwt.php';
 
+header('Content-Type: application/json');
+http_response_code(200);
+
 $auth_users = [
   'admin' => '$2y$10$/K.hjNr84lLNDt8fTXjoI.DBp6PpeyoJ.mGwrrLuCZfAwfSAGqhOW',
   'user' => '$2y$10$Fg6Dz8oH9fPoZ2jJan5tZuv6Z4Kp7avtQ9bDfrdRntXtPeiMAZyGO'
